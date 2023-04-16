@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import '../style/menu.css';
 import $ from 'jquery';
 import logo from './../assets/images/logo.png'
 
 export default function Menu() {
     const scroll = 50;
+    const menuRef = useRef<HTMLDivElement>(null);
     useEffect(()=> {
         $(document).ready(function(){
-
             $(window).on("scroll", function() {
               if(($(window).scrollTop() || scroll) > 50) {
                   $("#header").addClass("active-header");
@@ -23,12 +23,14 @@ export default function Menu() {
             // Responsive menu
             $("#responsive-nav-bar").hide();
           
-            $("#image-button-black").click(function(){
+            $("#image-button-black").unbind('click').click(function(){
               $("#responsive-nav-bar").slideToggle();
+              //handleMenu();
             });
           
-            $("#responsive-home-item , #responsive-features-item , #responsive-products-item , #responsive-media-item , #responsive-pricing-item").click(function(){
-              $("#responsive-nav-bar").slideToggle(200);
+            $("#responsive-home-item , #responsive-features-item , #responsive-products-item , #responsive-media-item , #responsive-pricing-item").unbind('click').click(function(){
+              $("#responsive-nav-bar").slideToggle();
+              handleMenu();
             })
           
           
@@ -102,36 +104,38 @@ export default function Menu() {
           
           });
     }, [])
+
+    const handleMenu = () => {
+        if(menuRef.current){
+            menuRef.current.classList.toggle("change");
+        }
+    }
     return (
         <div>
             <header id="header">
                 <div id="normal-header">
-                    <a href="#" id="image-link"><img src={logo} alt="Reverse Logo" id="header-img" /></a>
+                    <a href="#" id="image-link"><img src={logo} alt="Logo" id="header-img" /></a>
                     <nav id="nav-bar">
                         <ul>
                             <li className="nav-link" id="menu-item"><a href="#hero-header" className="menu-link"> Home </a></li>
                             <li className="nav-link" id="menu-item"><a href="#features-container" className="menu-link"> Features </a></li>
-                            <li className="nav-link" id="menu-item"><a href="#presentation-container" className="menu-link"> Products </a></li>
-                            <li className="nav-link" id="menu-item"><a href="#main-media-container" className="menu-link"> Media </a></li>
-                            <li className="nav-link" id="menu-item"><a href="#prices-section-container" className="menu-link"> Pricing </a>
-                            </li>
                         </ul>
                     </nav>
                 </div>
                 <div id="responsive-header">
-                    <div id="responsive-logo-button">
-                        <a href="#" id="image-link"><img src="https://i.ibb.co/0jM3ZvH/reverse-black.png" alt="Reverse Logo" id="header-img-black" /></a>
-                        <button id="image-button-black"><img src="https://i.ibb.co/yfM3fdZ/dropdown-menu-black.png" alt="Dropdown Menu" id="dropdown-button-black" /></button>
+                <div id="responsive-logo-button">
+                        <a href="#" id="image-link" className='logo'>Urban Production</a>
+                        <div id="image-button-black" className="container" onClick={handleMenu} ref={menuRef}>
+                            <div className="bar1"></div>
+                            <div className="bar2"></div>
+                            <div className="bar3"></div>
+                        </div>
                     </div>
-
+                
                     <div id="responsive-nav-bar">
                         <ul>
                             <li className="nav-link" id="responsive-home-item"><a href="#hero-header" className="responsive-menu-link"> Home </a></li>
                             <li className="nav-link" id="responsive-features-item"><a href="#features-container" className="responsive-menu-link"> Features </a></li>
-                            <li className="nav-link" id="responsive-products-item"><a href="#presentation-container" className="responsive-menu-link"> Products </a></li>
-                            <li className="nav-link" id="responsive-media-item"><a href="#main-media-container" className="responsive-menu-link"> Media </a></li>
-                            <li className="nav-link" id="responsive-pricing-item"><a href="#prices-section-container" className="responsive-menu-link"> Pricing </a>
-                            </li>
                         </ul>
                     </div>
                 </div>

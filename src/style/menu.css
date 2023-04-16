@@ -17,7 +17,11 @@ html {
   #red-text {
       color: #ff5a6e;
   }
-  
+  .logo {
+    margin-left: 5%;
+    font-weight: 700;
+    align-self: center;
+  }
   #title-text-separator {
     width: 5%;
     margin-top: 1%;
@@ -27,8 +31,29 @@ html {
   .responsive-menu-link {
     color: black;
   }
+  /**/ Menu bar */
+  .container {
+    display: inline-block;
+    cursor: pointer;
+  }
   
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
   
+  .change .bar1 {
+    transform: translate(0, 13px) rotate(-45deg);
+  }
+  
+  .change .bar2 {opacity: 0;} .bar3{width: 40px;} .bar2{width: 20px;}
+  
+  .change .bar3 {
+    transform: translate(0, -5px) rotate(45deg);
+  }
   /* ----- General Header CSS ------ */
   
   #header {
@@ -104,12 +129,10 @@ html {
   #responsive-header {
     display: none;
   }
-  
   #image-button-black {
-    display: none;
-    border: none;
+    align-self: center;
+    margin-right: 5%;
   }
-  
   #image-button-black:hover {
     cursor: pointer;
   }
@@ -162,11 +185,18 @@ html {
   
   #hero-title {
     font-size: 3.5em;
+    font-family: Lato,sans-serif;
+    font-weight: 300;
+    letter-spacing: 2px;
+    font-size: 48px;
   }
   
   #hero-text {
     font-size: 1.3em;
     margin-top: 2%;
+    font-family: Lato,sans-serif;
+    font-weight: 300;
+    letter-spacing: 2px;
   }
   
   #hero-button {
@@ -178,6 +208,9 @@ html {
     height: 55px;
     font-size: 15px;
     border-radius: 10px;
+    font-family: Lato,sans-serif;
+    font-weight: 300;
+    letter-spacing: 2px;
   }
   
   #hero-button:hover {
@@ -898,7 +931,7 @@ html {
   
     /* Navigation CSS */
     #header {
-      background: white;
+      background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
       position: fixed;
       display: flex;
       flex-wrap: wrap;
@@ -908,6 +941,7 @@ html {
       width: 100%;
       min-height: 80px;
       margin: auto;
+      clip-path: polygon(100% 0%, 0% 0% , 0.00% 88.33%, 2.00% 88.43%, 4.00% 88.73%, 6.00% 89.22%, 8.00% 89.87%, 10.00% 90.67%, 12.00% 91.59%, 14.00% 92.59%, 16.00% 93.64%, 18.00% 94.71%, 20.00% 95.75%, 22.00% 96.73%, 24.00% 97.61%, 26.00% 98.37%, 28.00% 98.97%, 30.00% 99.39%, 32.00% 99.62%, 34.00% 99.66%, 36.00% 99.49%, 38.00% 99.13%, 40.00% 98.58%, 42.00% 97.88%, 44.00% 97.04%, 46.00% 96.09%, 48.00% 95.06%, 50.00% 94.00%, 52.00% 92.94%, 54.00% 91.91%, 56.00% 90.96%, 58.00% 90.12%, 60.00% 89.42%, 62.00% 88.87%, 64.00% 88.51%, 66.00% 88.34%, 68.00% 88.38%, 70.00% 88.61%, 72.00% 89.03%, 74.00% 89.63%, 76.00% 90.39%, 78.00% 91.27%, 80.00% 92.25%, 82.00% 93.29%, 84.00% 94.36%, 86.00% 95.41%, 88.00% 96.41%, 90.00% 97.33%, 92.00% 98.13%, 94.00% 98.78%, 96.00% 99.27%, 98.00% 99.57%, 100.00% 99.67%);
     }
   
   
@@ -942,6 +976,7 @@ html {
       text-align: center;
       font-size: 23px;
       margin-top: 40%;
+      margin-bottom: 20%;
     }
   
     #responsive-first-item {
@@ -964,19 +999,6 @@ html {
       padding: 0;
     }
   
-  
-    #image-button-black {
-      border: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: inherit;
-      padding: 2%;
-    }
-  
-  
-  
-  
     /* Hero CSS */
   
     #hero-header {
@@ -994,7 +1016,6 @@ html {
       color: white;
   
       /* Background image */
-      background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(https://i.ibb.co/VTdML0x/accessories-apple-business-1038628.jpg);
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
@@ -1324,6 +1345,7 @@ html {
         width: 100%;
         min-height: 80px;
         margin: auto;
+        
       }
   
   
@@ -1382,12 +1404,8 @@ html {
   
   
       #image-button-black {
-        border: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: inherit;
-        padding: 2%;
+        align-self: center;
+        margin-right: 5%;
       }
   
   
