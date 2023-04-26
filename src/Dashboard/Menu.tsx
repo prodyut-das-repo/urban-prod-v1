@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from 'react'
 import '../style/menu.css';
 import $ from 'jquery';
 import logo from './../assets/images/logo.png'
+import { Header } from './header';
+import { Gallery } from './Album';
 
 export default function Menu() {
     const scroll = 50;
@@ -112,13 +114,17 @@ export default function Menu() {
     }
     return (
         <div>
-            <header id="header">
+            <Header />
+            {/* <header id="header">
                 <div id="normal-header">
                     <a href="#" id="image-link"><img src={logo} alt="Logo" id="header-img" /></a>
                     <nav id="nav-bar">
                         <ul>
                             <li className="nav-link" id="menu-item"><a href="#hero-header" className="menu-link"> Home </a></li>
-                            <li className="nav-link" id="menu-item"><a href="#features-container" className="menu-link"> Features </a></li>
+                            <li className="nav-link" id="menu-item"><a href="#features-container" className="menu-link"> Portfolio </a></li>
+                            <li className="nav-link" id="menu-item"><a href="#services" className="menu-link"> Services </a></li>
+                            <li className="nav-link" id="menu-item"><a href="#testimonials" className="menu-link"> Testimonials </a></li>
+                            <li className="nav-link" id="menu-item"><a href="#aboutus" className="menu-link"> About us </a></li>
                         </ul>
                     </nav>
                 </div>
@@ -140,9 +146,7 @@ export default function Menu() {
                     </div>
                 </div>
 
-            </header>
-
-
+            </header> */}
             <div id="hero-header">
                 <div id="hero-content">
                     <h1 id="hero-title"> Urban Production </h1>
@@ -158,66 +162,8 @@ export default function Menu() {
 
 
                 <div id="features-container">
-
-                    <div id="features-description">
-                        <h1> Our services offer <span id="red-text"> the best features </span> </h1>
-
-                        <hr id="title-text-separator" />
-
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                            do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                            aliquip ex ea commodo consequat. </p>
-                    </div>
-
-                    <div id="service-features">
-
-                        <div id="feature">
-                            <img src="https://i.ibb.co/tQrPJGk/like.png" alt="Heart Icon" id="heart-icon" />
-
-                            <h2 id="feature-title"> Short Title </h2>
-
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. </p>
-
-                            <a href="#"><button id="feature-button"> See more! </button></a>
-                        </div>
-
-                        <div id="feature">
-                            <img src="https://i.ibb.co/LY0pq5X/web-programming.png" alt="Code Icon" id="code-icon" />
-
-                            <h2 id="feature-title"> Short Title </h2>
-
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. </p>
-
-                            <a href="#"><button id="feature-button"> See more! </button></a>
-                        </div>
-
-                        <div id="feature">
-                            <img src="https://i.ibb.co/vHjwX9N/smartphone-with-shield.png" alt="Shield on Phone Icon" id="phone-icon" />
-
-                            <h2 id="feature-title"> Short Title </h2>
-
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. </p>
-
-                            <a href="#"><button id="feature-button"> See more! </button></a>
-                        </div>
-
-                        <div id="feature">
-                            <img src="https://i.ibb.co/6D3GmDW/monitor.png" alt="Monitor Icon" id="monitor-icon" />
-
-                            <h2 id="feature-title"> Short Title </h2>
-
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididunt ut labore et dolore magna aliqua. </p>
-
-                            <a href="#"><button id="feature-button"> See more! </button></a>
-                        </div>
-
-                    </div>
-
+                    <Gallery/>
+                   
                 </div>
             </div>
 
